@@ -1,0 +1,97 @@
+@charset "UTF-8";
+body{}
+body{
+    width: 100%;
+    height: 100svh;
+    margin: 0;
+    padding: 0;
+    background: pink;
+    display: flex;
+    flex-direction: column;
+    justify-content:center ;
+    align-items: center;
+    box-sizing: border-box;
+
+}
+
+.box{
+    border: 10px solid white;
+    border-radius: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: rgba(247, 243, 242, 0.7);
+    padding: 30px 0;
+    width: 80%;
+    max-width: 1024px;
+}
+
+.pre-tit{margin: 0;}
+.tit{margin-top: 5px;}
+.img-box {
+    height: 35vw;
+    /* border: 1px solid #000; */
+}
+   
+.main-img{
+height: 100%;
+}
+#result-text{}
+
+#chance-area{
+    /* border: 1px solid #000; */
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content:center ;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+#chance-area p{
+    margin: 0;
+    padding: 0;
+}
+#chance-area .glass{
+    width: 6vw;
+    height: 6.5vw;
+    border-bottom-right-radius: 20%;
+    border-bottom-left-radius: 20%;
+    border: 3px solid #4bb7f1;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+#chance-area .glass .soju{
+    background: rgb(124, 192, 225);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    bottom: -100%;
+    transition: bottom 0.3s ease;
+}
+
+input[id="user-num"]{
+    width: 60%;
+
+    text-align: center;
+    height: 50px;
+    font-size: 2vw;
+    line-height: 50px;
+    box-sizing: border-box;
+    transition: all .3s ease;
+
+}
+input[id="user-num"]:focus::placeholder{ color: transparent;
+}
+button{
+    width: 7vw;
+    width: 60px;
+    height: 50px;
+    font-size: 2vw;
+    color: #fff;
+    border-radius: 8%;
+    padding: 0 2px;
+    
+}
+button#play-btn{background: #28a745;}
+button#reset-btn{background: #333;}

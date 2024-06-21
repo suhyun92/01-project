@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 문법 문제</title>
+</head>
+<body>
+    <script>
+        console.log("--문제1)--------------")
+
+        let name = "noona's fruit store";
+        let fruits = ["banana","apple","mango"];
+        let address = "Seoul"
+
+        let store= {name,fruits,address}
+        console.log(store)
+
+        console.log("--문제2)--제 가게 이름은 noona's fruit store 입니다. 위치는 Seoul에 있습니다.")
+        console.log(`제 가게 이름은 "${name}" 입니다. 위치는 "${address}"`)
+
+        console.log("--문제3)------Destructoring--------")
+        function calculate(obj){
+            let {a,b,c} = obj 
+            return a+b+c;
+        }
+        calculate({a:1,b:2,c:3})
+        console.log( calculate({a:1,b:2,c:3}))
+
+        console.log("--문제4)--------------")
+        let name2 = "noona store";
+        let fruits2 = ["banana","apple","mango"];
+        let address2 ={
+            country : "Korea",
+            city : "Seoul"
+        }
+        function findStore(obj){
+            let {name2,address2:{city}} = obj
+            return name2 === "noona store" && city === "Seoul"
+        } 
+        console.log(findStore({name2,fruits2,address2}))
+
+
+        console.log("--문제5)--------------")
+        function getNumber(){
+            let array = [1,2,3,4,5,6]
+            let [ , ,c, ,e, f] = array
+            
+            return {c, e, f};
+        }
+        console.log(getNumber())
+        // c : 3 , e: 5 , f : 6
+
+        
+        console.log("--문제6)--------------")
+        function getCalender(first, ...rest){
+            return (
+                first === "January" &&
+                rest[0] === "Febuary" &&
+                rest[1] === "March" &&
+                rest[2] === undefined
+            );
+        };
+        console.log(getCalender("January","Febuary","March"))
+
+
+        console.log("--문제7)--------------")
+        function getMinimun(){
+            let a = [45,23,78];
+            let b = [54,11,9];
+            return Math.min(...a,...b);
+
+        }
+        console.log(getMinimun())
+
+        console.log("--문제8)--------------")
+        function sumNumber(){
+            const sum = (a,b)=>{return a+b;}
+            return sum(40,10)
+        }
+        console.log(sumNumber())
+
+
+        console.log("--문제9)--------------")
+        function sumNumber2(){
+            return addNumber(1)(2)(3);
+            let addNumber = (a) => (b) => (c) => {return a+b+c};
+            
+        }
+        console.log(sumNumber2())
+
+    </script>
+</body>
+</html>

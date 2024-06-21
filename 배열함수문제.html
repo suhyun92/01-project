@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열함수문제</title>
+</head>
+<body>
+    <script>
+        let name = [
+        "Steven Paul Jobs",
+        "Bill Gates",
+        "Mark Elliot Zuckerberg",
+        "Elon Musk",
+        "Jeff Bezos",
+        "Warren Edward Buffett",
+        "Larry Page",
+        "Larry Ellison",
+        "Tim Cook",
+        "Lloyd Blankfein"
+        ]
+        console.log("--문제1-1)-----Map-----")   
+        let data = name.map((item)=>{
+            return item.toUpperCase();
+        })
+        console.log(data)
+        
+        console.log("--문제1-2)-----Map-----")   
+        let data2 = name.map((item)=>{
+            return item.split(" ")[0]
+        })
+        console.log(data2)
+
+        console.log("--문제1-3)-----Map-----")   
+        let data3 = name.map((item)=>{
+            let div = []
+            div = item.split(" ");
+            let initial = "";
+            div.forEach((nameItem) => {
+                initial += nameItem[0];
+            });
+            return initial;
+        })
+        console.log(data3)
+// 
+
+
+
+        console.log("--문제2-1)-----Filter-----")   
+        let data4 = name.filter((item)=>
+            item.includes("E")
+        )
+        console.log(data4)
+
+        console.log("--문제2-2)-----Filter-----")   
+        let data5 = name.filter((item)=>{
+            let splitName = item.split("");
+            return splitName.some((letter,index)=>
+                letter == splitName[index + 1]
+            )
+        })
+        console.log(data5)
+
+
+        console.log("--문제3-1)-----Some-----")
+        let data6 = name.some((item)=>{
+            return item.length >= 20
+        })
+        console.log(data6);
+
+
+        console.log("--문제3-2)-----Some-----")
+        let data7 =  name.some((item)=>{
+            let lastName = item.split("");
+            lastName.pop();
+            return lastName.some(eachName => 
+            eachName.toLocaleLowerCase().includes("a")
+            )
+
+        })
+        console.log(data7)
+
+
+        console.log("--문제4-1)-----Every-----")
+        let data8 = name.every((item)=>{
+            return item.length >=20
+        })
+        console.log(data8)
+        
+        console.log("--문제4-2)-----Every-----")
+        let data9 = name.every((item)=>{
+            return item.includes("a");
+        })
+        console.log(data9)
+
+        console.log("--문제5-1)-----Find-----")
+        let data10 = name.find((item)=>{
+            return item.length >=20
+        })
+        console.log(data10)
+        console.log("--문제5-2)-----Find-----")
+        let data11 = name.find((item)=>{
+            let div = [];
+            div = item.split("");
+            return item.length >= 3
+        })
+        console.log(data11)
+
+        console.log("--문제6-1)-----FindIndex-----")
+        let data12 = name.findIndex((item)=>{
+            return item.length >=20;
+        })
+        console.log(data12);
+        console.log("--문제6-2)-----FindIndex-----")
+        let data13 = name.findIndex((item)=>{
+            let div = [];
+            div = item.split("");
+            return item.length >= 3
+        })
+        console.log(data13);
+    </script>
+</body>
+</html>
